@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 18:50:18 by niesteba          #+#    #+#             */
-/*   Updated: 2026/11/03 19:32:33 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/05 12:29:25 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,7 @@ void	sort_by_chunks(t_ab *store);
 void	select_sort_strategy(t_ab *store);
 double	calculate_disorder(t_ab *store);
 int		adaptive_sort(t_ab *store, double disorder);
-void	print_benchmark(t_ab *store, double disorder,
-			char *strategy, char *complexity);
+void	print_benchmark(t_ab *store, double disorder, char *strategy);
 void	free_struct(t_ab **store);
 
 #endif
