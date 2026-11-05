@@ -43,7 +43,7 @@ Aquí unos ejemplos de error:
 ./push_swap 1 --simple
 ./push_swap --complex
 ./push_swap 1 2 3 1
-./push_swap "--medium -- bench" 2 3 1 4
+./push_swap "--medium --bench" 2 3 1 4
 ./push_swap 1 -2 1 - 4
 ```
 
