@@ -6,13 +6,13 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 18:59:26 by niesteba          #+#    #+#             */
-/*   Updated: 2026/10/28 16:23:08 by niesteba         ###   ########.fr       */
+/*   Updated: 2026/11/05 13:16:28 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	stack_contains(int x, t_ab *store)
+static void	stack_contains(int x, t_ab *store, char **arg)
 {
 	t_list	*cursor;
 	t_data	*content;
@@ -22,7 +22,10 @@ static void	stack_contains(int x, t_ab *store)
 	{
 		content = cursor->content;
 		if (content->num == x)
+		{
+			free_arg(arg);
 			is_error(store);
+		}
 		cursor = cursor->next;
 	}
 }
@@ -47,7 +50,7 @@ int	atoi_and_valid(char **arg, int j, t_ab *store)
 		sign = -1;
 	if (i == 0 && arg[j][i] == '+')
 		i++;
-	if (!arg[j][i])
+	if (!validate(arg[j][i], arg))
 		is_error(store);
 	while (arg[j][i])
 	{
@@ -59,6 +62,6 @@ int	atoi_and_valid(char **arg, int j, t_ab *store)
 		if (!validate(!(sign == -1 && x < INT_MIN), arg))
 			is_error(store);
 	}
-	stack_contains((int)(x * sign), store);
+	stack_contains((int)(x * sign), store , arg);
 	return ((int)(x * sign));
 }
