@@ -15,7 +15,9 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 typedef struct s_list
 {
 	void			*content;
@@ -74,5 +76,9 @@ char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 char				**ft_split(char const *s, char c);
+
+char	*get_next_line(int fd);
+ssize_t	get_end_line(char *s, ssize_t nread);
+char	*add_to_line(char **s1, char *s2, ssize_t nread);
 
 #endif
