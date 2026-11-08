@@ -26,12 +26,16 @@ COMMON_SRCS = parser/flags.c \
               strategies/simple/min_extraction_sort.c \
               strategies/complex/quick_sort.c \
               strategies/complex/quick_sort_utils.c \
-              strategies/medium/initialize_struct.c \
-              strategies/medium/extract_chunk.c \
-              strategies/medium/return_to_a.c \
-              strategies/medium/main_chunks.c \
-              strategies/medium/utils.c
-
+	      strategies/medium/choose_chunk.c \
+	      strategies/medium/simulate_chunk.c \
+	      strategies/medium/simulate_array.c \
+	      strategies/medium/simulate_search.c \
+	      strategies/medium/extract_chunk.c \
+	      strategies/medium/extract_search.c \
+	      strategies/medium/extract_rotations.c \
+	      strategies/medium/return_to_a.c \
+	      strategies/medium/main_chunks.c \
+	      strategies/medium/utils.c
 SRCS        = main.c $(COMMON_SRCS)
 BONUS_SRCS  = bonus/checker.c $(COMMON_SRCS)
 
