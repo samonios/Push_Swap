@@ -89,7 +89,16 @@ En función de este ratio (entre `0.0` y `1.0`), elige la estrategia óptima:
   Recorre la pila A buscando el elemento con el valor mínimo actual, calcula si es más corto llevarlo a la cima mediante rotaciones normales (`ra`) o inversas (`rra`), y lo empuja a la pila B (`pb`). Este proceso se repite hasta que el bloque restante en A ya está ordenado. Finalmente, se devuelven todos los elementos de B a A con `pa`.
   * *Justificación:* Es un enfoque determinista sin sobrecarga de estructuras adicionales, óptimo para conjuntos muy pequeños de datos o listas con un nivel de desorden inferior al 20%.
 
-* **Medium:**
+* **Medium (O(n × √n)) — Ordenamiento por Bloques (*Chunk Sort*):**
+  Divide el rango de índices objetivo en bloques (*chunks*) y utiliza una simulación de movimientos para evaluar el coste de extraer cada bloque desde la pila A hacia la pila B.
+
+  1. Se calcula la distribución de los bloques en función del número de elementos que hay que ordenar.
+  2. Para cada bloque disponible, se simula su extracción, evaluando las rotaciones necesarias en ambas pilas y aprovechando las operaciones simultáneas (`rr` y `rrr`) para reducir el coste total.
+  3. Se selecciona el bloque con el menor coste estimado y se extraen sus elementos desde A, insertándolos en B en orden inverso.
+  4. El proceso se repite, recalculando los costes sobre el estado actualizado de las pilas, hasta completar la extracción.
+  5. Finalmente, los elementos se devuelven a A siguiendo su índice objetivo, reconstruyendo la secuencia ordenada.
+
+  * *Justificación:* La división en bloques reduce el espacio de búsqueda y permite tomar decisiones teniendo en cuenta el coste combinado de los movimientos en ambas pilas. La simulación permite comparar distintas alternativas antes de ejecutar los movimientos, mientras que las rotaciones simultáneas reducen operaciones cuando ambas pilas necesitan desplazarse en la misma dirección.
 
 * **Complex ($O(n \log n)$) — Quick Sort de 3 Vías en Pilas (`quick_sort`):**
   Implementa un algoritmo recursivo de tipo *Divide y Vencerás* adaptado a dos pilas. En cada llamada sobre un bloque de tamaño `block_size`:
