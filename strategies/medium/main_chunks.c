@@ -6,90 +6,57 @@
 /*   By: svalero <svalero@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 20:43:36 by svalero           #+#    #+#             */
-/*   Updated: 2026/11/05 09:26:52 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/08 17:54:17 by svalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "chunks.h"
 
-static int	get_target(t_list *stack_a, int offset)
-{
-	int		i;
-	t_list	*node;
+#define CHUNK_FACTOR 33
 
-	i = 0;
-	node = stack_a;
-	while (i++ < offset)
-		node = node->next;
-	return (((t_data *)node->content)->target);
+/* Calculates the integer square root of the chunk size formula. */
+static int	get_chunk_size(int size_a)
+{
+	long long	target;
+	long long	root;
+
+	target = (long long)CHUNK_FACTOR * CHUNK_FACTOR * size_a;
+	root = 0;
+	while ((root + 1) * (root + 1) <= target)
+		root++;
+	return ((int)(root / 10));
 }
 
-static int	get_next_chunk_to_sort(t_ab *store, t_chunk *data)
+/* Initializes the number and capacity of the chunks. */
+static void	set_chunk_data(t_chunk *data, int size_a)
 {
-	int	i;
-	int	num;
-
-	data->depth = 0;
-	while (1)
-	{
-		if (data->depth % 2 == 0)
-			num = get_target(store->stack[0], data->depth / 2);
-		else
-			num = get_target(store->stack[0], store->list_size[0]
-					- (data->depth / 2 + 1));
-		i = num / data->chunksize;
-		data->tab[i][data->tab[i][2] + data->tab[i][3] + INFO_CHUNK] = num;
-		if (data->depth % 2 == 0)
-			data->tab[i][2]++;
-		else
-			data->tab[i][3]++;
-		if (data->tab[i][0] == data->tab[i][2] + data->tab[i][3])
-			return (i);
-		data->depth++;
-	}
+	data->csize = get_chunk_size(size_a);
+	if (data->csize < 1)
+		data->csize = 1;
+	data->nchunks = size_a / data->csize;
+	data->lsize = size_a % data->csize;
+	if (data->lsize != 0)
+		data->nchunks++;
+	else
+		data->lsize = data->csize;
 }
 
-static void	set_to_zero_tab(t_chunk *data, int init)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < data->chunks)
-	{
-		j = 2;
-		if (init == 0)
-			j = 1;
-		while (j < (data->tab[i][0] + INFO_CHUNK))
-		{
-			data->tab[i][j] = 0;
-			j++;
-		}
-		i++;
-	}
-}
-
+/* Sorts stack A by extracting the cheapest chunk into stack B. */
 void	sort_by_chunks(t_ab *store)
 {
 	t_chunk	data;
-	int		i;
+	int		n;
 	int		index;
 
-	if (store->list_size[0] <= 1)
-	    return ;
-	if (!initialize_data_struct(store->list_size[0], &data))
-	{
-		is_error(store);
+	if (store->list_size[0] < 2)
 		return ;
-	}
-	i = 0;
-	while (i < data.chunks)
+	set_chunk_data(&data, store->list_size[0]);
+	n = 0;
+	while (n < data.nchunks)
 	{
-		set_to_zero_tab(&data, i);
-		index = get_next_chunk_to_sort(store, &data);
-		extract_chunk_from_a(store, &data, index);
-		i++;
+		index = index_cheaper_chunk(&data, store);
+		put_chunk_rsorted_b(store, &data, index);
+		n++;
 	}
 	return_to_a(store, &data);
-	free_array_tab(data.tab, data.chunks);
 }
