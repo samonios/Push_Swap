@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   adaptive_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svalero <svalero@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 18:41:50 by svalero           #+#    #+#             */
-/*   Updated: 2026/11/03 19:42:36 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/09 14:45:38 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,15 @@ double	calculate_disorder(t_ab *store)
 
 int	adaptive_sort(t_ab *store, double disorder)
 {
+	if (store->list_size[0] < 6)
+	{
+		min_extraction_sort(store);
+		if (disorder < 0.2)
+			return (1);
+		if (disorder < 0.5)
+			return (2);
+		return (4);
+	}
 	if (disorder < 0.2)
 	{
 		min_extraction_sort(store);

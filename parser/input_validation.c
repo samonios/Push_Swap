@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 18:59:26 by niesteba          #+#    #+#             */
-/*   Updated: 2026/11/09 13:46:57 by niesteba         ###   ########.fr       */
+/*   Updated: 2026/11/09 14:04:06 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	atoi_and_valid(char **arg, int j, t_ab *store)
 		x = x * 10 + (arg[j][i++] - '0');
 		if (!validate(!(sign == 1 && x > INT_MAX), arg))
 			is_error(store);
-		if (!validate(!(sign == -1 && x > INT_MIN + 1), arg))
+		if (!validate(!(sign == -1 && x * sign < INT_MIN), arg))
 			is_error(store);
 	}
 	stack_contains((int)(x * sign), store, arg);

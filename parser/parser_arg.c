@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 11:49:40 by svalero           #+#    #+#             */
-/*   Updated: 2026/11/05 13:41:15 by niesteba         ###   ########.fr       */
+/*   Updated: 2026/11/09 14:31:56 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,5 @@ void	parser_arg(t_ab *store, int ac, char **av)
 		i++;
 	}
 	if (store->list_size[0] == 0)
-		is_error(store);
+		return ;
 }
