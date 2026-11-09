@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 18:33:25 by svalero           #+#    #+#             */
-/*   Updated: 2026/11/05 12:30:04 by niesteba         ###   ########.fr       */
+/*   Updated: 2026/11/09 12:11:58 by svalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,7 @@ void	select_sort_strategy(t_ab *store)
 	char			*strategy_name;
 
 	strategy = store->flags & 15;
-	disorder = 0.0;
-	if (store->flags % 8 == 0)
-		disorder = calculate_disorder(store);
+	disorder = calculate_disorder(store);
 	strategy = execute_strategy(store, strategy, disorder);
 	set_strategy_info(strategy, &strategy_name);
 	if (store->flags & 16)
