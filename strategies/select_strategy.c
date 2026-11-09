@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 18:33:25 by svalero           #+#    #+#             */
-/*   Updated: 2026/11/09 12:11:58 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/09 12:19:02 by svalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 static int	execute_strategy(t_ab *store, unsigned char strategy,
 	double disorder)
 {
-	if (strategy == 0 || strategy == 8)
+	if (store->list_size[0] > 5 && (strategy == 0 || strategy == 8))
 		return (adaptive_sort(store, disorder));
-	else if (strategy == 1)
+	else if (strategy == 1 || store->list_size[0] < 6)
 		min_extraction_sort(store);
 	else if (strategy == 2)
 		sort_by_chunks(store);
