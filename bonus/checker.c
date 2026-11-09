@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: svalero <svalero@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 15:29:56 by niesteba          #+#    #+#             */
-/*   Updated: 2026/11/09 16:31:29 by niesteba         ###   ########.fr       */
+/*   Updated: 2026/11/09 16:32:22 by svalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	main(int ac, char **av)
 		return (-1);
 	parser_arg(store, ac, av);
 	if (store->list_size[0] == 0)
-		return ;
+		return (1);
 	if (store->flags != 0)
 		is_error(store);
 	op = get_next_line(0);
