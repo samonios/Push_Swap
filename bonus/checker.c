@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 15:29:56 by niesteba          #+#    #+#             */
-/*   Updated: 2026/11/09 16:09:21 by niesteba         ###   ########.fr       */
+/*   Updated: 2026/11/09 16:18:06 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int	main(int ac, char **av)
 		is_error(store);
 	op = get_next_line(0);
 	fill_array_op_name(store->name);
+	set_target_position(store);
 	store->flags = 32;
 	while (op)
 	{
