@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 18:53:49 by niesteba          #+#    #+#             */
-/*   Updated: 2026/11/09 12:40:40 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/09 12:49:05 by svalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	is_block_ordered(t_ab *store, int curr, int block_size)
 	while (i < block_size - 1)
 	{
 		if (!compare(((t_data *)cursor->content)->target,
-			((t_data *)cursor->next->content)->target, curr))
+				((t_data *)cursor->next->content)->target, curr))
 			return (0);
 		cursor = cursor->next;
 		i++;
