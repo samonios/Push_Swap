@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 15:29:56 by niesteba          #+#    #+#             */
-/*   Updated: 2026/11/09 16:18:06 by niesteba         ###   ########.fr       */
+/*   Updated: 2026/11/09 16:31:29 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	check(t_ab *store)
 {
 	if (store->list_size[1] != 0
 		|| !is_block_ordered(store, 0, store->list_size[0]))
-		write(1, "KO\n", 2);
+		write(1, "KO\n", 3);
 	else
-		write(1, "OK\n", 2);
+		write(1, "OK\n", 3);
 }
 
 int	main(int ac, char **av)
@@ -47,6 +47,8 @@ int	main(int ac, char **av)
 	if (!store)
 		return (-1);
 	parser_arg(store, ac, av);
+	if (store->list_size[0] == 0)
+		return ;
 	if (store->flags != 0)
 		is_error(store);
 	op = get_next_line(0);
