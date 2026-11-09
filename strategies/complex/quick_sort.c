@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 18:11:56 by niesteba          #+#    #+#             */
-/*   Updated: 2026/11/09 11:29:42 by niesteba         ###   ########.fr       */
+/*   Updated: 2026/11/09 13:03:42 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static	int	get_median(t_list *stack, int block_size)
 	int		min;
 	int		max;
 	t_data	*content;
-	
+
 	min = INT_MAX;
 	max = INT_MIN;
 	while (block_size-- > 0)
@@ -55,7 +55,7 @@ static	int	get_median(t_list *stack, int block_size)
 
 static void	separate(t_ab *store, int curr_stack, int size, int *mp)
 {
-	int num;
+	int	num;
 	int	med;
 
 	mp[0] = 0;
@@ -86,7 +86,7 @@ void	quick_sort(t_ab *store, int curr_stack, int block_size)
 	int	mp[3];
 
 	if (block_size <= 3 || is_block_ordered(store, curr_stack, block_size))
-	{	
+	{
 		handle_block(store, curr_stack, block_size);
 		return ;
 	}

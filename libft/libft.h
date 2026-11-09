@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 13:01:53 by niesteba          #+#    #+#             */
-/*   Updated: 2026/10/20 07:58:46 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/09 13:05:02 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
+
 typedef struct s_list
 {
 	void			*content;
@@ -77,8 +78,8 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 char				**ft_split(char const *s, char c);
 
-char	*get_next_line(int fd);
-ssize_t	get_end_line(char *s, ssize_t nread);
-char	*add_to_line(char **s1, char *s2, ssize_t nread);
+char				*get_next_line(int fd);
+ssize_t				get_end_line(char *s, ssize_t nread);
+char				*add_to_line(char **s1, char *s2, ssize_t nread);
 
 #endif

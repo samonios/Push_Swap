@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 18:50:18 by niesteba          #+#    #+#             */
-/*   Updated: 2026/11/09 10:49:02 by niesteba         ###   ########.fr       */
+/*   Updated: 2026/11/09 13:04:01 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int		compare(int a1, int b1, int order);
 void	handle_block(t_ab *store, int curr, int block_size);
 void	quick_sort(t_ab *store, int curr, int block_size);
 void	parser_arg(t_ab *store, int ac, char **av);
-/* barra separa funciones de uno y otro */
 void	fill_array_op_name(char **name);
 void	do_op(t_ab *store, int op);
 void	do_swap(t_list **stack);
