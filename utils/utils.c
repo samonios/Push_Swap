@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 18:53:49 by niesteba          #+#    #+#             */
-/*   Updated: 2026/11/09 13:51:21 by niesteba         ###   ########.fr       */
+/*   Updated: 2026/11/09 13:57:52 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	ft_strcmp(char *s1, char *s2)
 {
 	size_t	i;
 
+	i = 0;
 	while (s1[i] && s1[i] == s2[i])
 		i++;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);

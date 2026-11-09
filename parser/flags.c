@@ -6,20 +6,11 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 19:01:32 by niesteba          #+#    #+#             */
-/*   Updated: 2026/11/09 13:50:54 by niesteba         ###   ########.fr       */
+/*   Updated: 2026/11/09 13:58:32 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"	
-
-int	ft_strcmp(char *s1, char *s2)
-{
-	size_t	i;
-
-	while (s1[i] && s1[i] == s2[i])
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-}
 
 static int	get_flag(char *arg)
 {
