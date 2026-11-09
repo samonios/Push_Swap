@@ -6,7 +6,7 @@
 /*   By: svalero <svalero@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 08:53:26 by svalero           #+#    #+#             */
-/*   Updated: 2026/10/29 17:59:16 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/09 10:47:41 by svalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,4 @@ void	do_op(t_ab *store, int op)
 		push(store, op % 3);
 	store->op_counter[op]++;
 	write(1, store->name[op], ft_strlen(store->name[op]));
-	write(1, "\n", 1);
 }
