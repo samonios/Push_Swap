@@ -18,7 +18,7 @@ COMMON_SRCS = parser/flags.c \
               do_operations/rotate.c \
               do_operations/swap.c \
               utils/set_target.c \
-              utils/utils_nico.c \
+              utils/utils.c \
               utils/free_struct.c \
               strategies/benchmark.c \
               strategies/select_strategy.c \
