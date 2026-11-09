@@ -6,7 +6,7 @@
 /*   By: svalero <svalero@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 10:32:39 by svalero           #+#    #+#             */
-/*   Updated: 2026/11/08 19:16:11 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/09 10:13:36 by svalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct s_move
 }	t_move;
 
 int		index_cheaper_chunk(t_chunk *data, t_ab *store);
-int		simulate_chunk(t_ab *store, int start, int capacity);
+int		simulate_extract_chunk(t_ab *store, int start, int capacity);
 int		find_sim_best_move(t_sim *sim, int start, int end, t_move *best);
 int		sim_positive_pos(int pos, int size);
 void	sim_rotate_left(int *array, int size, int pos);

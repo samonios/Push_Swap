@@ -6,7 +6,7 @@
 /*   By: svalero <svalero@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 19:44:13 by svalero           #+#    #+#             */
-/*   Updated: 2026/11/08 19:44:30 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/09 10:13:39 by svalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static int	run_simulation(t_sim *sim, int start, int capacity)
 }
 
 /* Simulates extracting a chunk and returns its total operation cost. */
-int	simulate_chunk(t_ab *store, int start, int capacity)
+int	simulate__extract_chunk(t_ab *store, int start, int capacity)
 {
 	t_sim	sim;
 	int		valid;

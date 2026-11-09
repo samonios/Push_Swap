@@ -6,21 +6,21 @@
 /*   By: svalero <svalero@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 20:43:36 by svalero           #+#    #+#             */
-/*   Updated: 2026/11/09 08:24:23 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/09 10:06:20 by svalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "chunks.h"
 
-/* Calculates the integer square root of the chunk size formula. */
+/* Calculates the optimal chunk size for more than 12 elements. */
 static int	get_chunk_size(int size_a)
 {
-	int	root;
+	int	csize;
 
-	root = 0;
-	while ((root + 1) * (root + 1) <= size_a)
-		root++;
-	return (root * 3 + root / 3);
+	csize = 0;
+	while (size_a / (csize + 1) >= (csize + 1))
+		csize++;
+	return (csize * 3 + csize / 3);
 }
 
 /* Initializes the number and capacity of the chunks. */
