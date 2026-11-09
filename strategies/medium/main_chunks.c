@@ -6,7 +6,7 @@
 /*   By: svalero <svalero@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 20:43:36 by svalero           #+#    #+#             */
-/*   Updated: 2026/11/09 11:16:20 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/09 11:21:02 by svalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	sort_by_chunks(t_ab *store)
 	int		n;
 	int		index;
 
-	if (store->list_size[0] < 2 && is_block_ordered(store, 0, list_size[0]))
+	if (store->list_size[0] < 2 && is_block_ordered(store, 0, store->list_size[0]))
 		return ;
 	set_chunk_data(&data, store->list_size[0]);
 	n = 0;
