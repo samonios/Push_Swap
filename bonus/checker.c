@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 15:29:56 by niesteba          #+#    #+#             */
-/*   Updated: 2026/10/28 17:07:58 by niesteba         ###   ########.fr       */
+/*   Updated: 2026/11/09 10:46:19 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,6 @@ int	get_op_code(t_ab *store, char *op)
 	return (-1);
 }
 
-static void	fill_array_op_name(char **name)
-{
-	name[0] = "sa";
-	name[1] = "sb";
-	name[2] = "ss";
-	name[3] = "ra";
-	name[4] = "rb";
-	name[5] = "rr";
-	name[6] = "rra";
-	name[7] = "rrb";
-	name[8] = "rrr";
-	name[9] = "pb";
-	name[10] = "pa";
-}
 void	check(t_ab *store)
 {
 	if (store->list_size[1] != 0

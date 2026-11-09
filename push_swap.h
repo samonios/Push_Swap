@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 18:50:18 by niesteba          #+#    #+#             */
-/*   Updated: 2026/11/08 20:11:21 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/09 10:49:02 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	handle_block(t_ab *store, int curr, int block_size);
 void	quick_sort(t_ab *store, int curr, int block_size);
 void	parser_arg(t_ab *store, int ac, char **av);
 /* barra separa funciones de uno y otro */
+void	fill_array_op_name(char **name);
 void	do_op(t_ab *store, int op);
 void	do_swap(t_list **stack);
 void	do_rotate(t_list **stack);
@@ -54,7 +55,7 @@ void	select_sort_strategy(t_ab *store);
 double	calculate_disorder(t_ab *store);
 int		adaptive_sort(t_ab *store, double disorder);
 void	print_benchmark(t_ab *store, double disorder,
-			char *strategy, char *complexity);
+			char *strategy);
 void	free_struct(t_ab **store);
 
 #endif
