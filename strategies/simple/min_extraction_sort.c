@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 13:05:46 by niesteba          #+#    #+#             */
-/*   Updated: 2026/10/28 16:24:06 by niesteba         ###   ########.fr       */
+/*   Updated: 2026/11/09 12:30:25 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	min_extraction_sort(t_ab *store)
 	{
 		min_index = 0;
 		min_node = search_min(store->stack[0], &min_index);
-		move_to_head(store, min_node, min_index < store->list_size[0] / 2);
+		move_to_head(store, min_node, min_index <= store->list_size[0] / 2);
 		do_op(store, 9);
 	}
 	restock_a(store);
