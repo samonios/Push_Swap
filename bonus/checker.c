@@ -6,7 +6,7 @@
 /*   By: svalero <svalero@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 15:29:56 by niesteba          #+#    #+#             */
-/*   Updated: 2026/11/09 16:32:22 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/09 16:37:57 by svalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main(int ac, char **av)
 
 	store = calloc(1, sizeof(t_ab));
 	if (!store)
-		return (-1);
+		return (2);
 	parser_arg(store, ac, av);
 	if (store->list_size[0] == 0)
 		return (1);
@@ -64,6 +64,5 @@ int	main(int ac, char **av)
 			is_error(store);
 		op = get_next_line(0);
 	}
-	check(store);
-	free_struct(&store);
+	return (check(store), free_struct(&store), 0);
 }
