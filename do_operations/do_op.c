@@ -6,7 +6,7 @@
 /*   By: svalero <svalero@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 08:53:26 by svalero           #+#    #+#             */
-/*   Updated: 2026/11/09 10:47:41 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/09 11:04:45 by svalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ void	do_op(t_ab *store, int op)
 	else
 		push(store, op % 3);
 	store->op_counter[op]++;
-	write(1, store->name[op], ft_strlen(store->name[op]));
+	if (store->flags % 32 != 0)
+		write(1, store->name[op], ft_strlen(store->name[op]));
 }
