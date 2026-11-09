@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   benchmark.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svalero <svalero@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 19:20:36 by svalero           #+#    #+#             */
-/*   Updated: 2026/11/03 20:38:08 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/05 12:28:38 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,7 @@ static void	print_counters(t_ab *store, const int *order, int count)
 	write(2, "\n", 1);
 }
 
-void	print_benchmark(t_ab *store, double disorder,
-	char *strategy, char *complexity)
+void	print_benchmark(t_ab *store, double disorder, char *strategy)
 {
 	static const int	first[] = {0, 1, 2, 10, 9};
 	static const int	second[] = {3, 4, 5, 6, 7, 8};
@@ -70,8 +69,6 @@ void	print_benchmark(t_ab *store, double disorder,
 	print_disorder(disorder);
 	ft_putstr_fd("\n[bench] strategy: ", 2);
 	ft_putstr_fd(strategy, 2);
-	ft_putstr_fd(" / ", 2);
-	ft_putstr_fd(complexity, 2);
 	ft_putstr_fd("\n[bench] total_ops: ", 2);
 	ft_putnbr_fd(get_total_operations(store), 2);
 	write(2, "\n", 1);
