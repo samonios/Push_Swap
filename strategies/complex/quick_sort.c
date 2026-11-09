@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 18:11:56 by niesteba          #+#    #+#             */
-/*   Updated: 2026/10/28 16:27:31 by niesteba         ###   ########.fr       */
+/*   Updated: 2026/11/09 11:29:42 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static	int	get_median(t_list *stack, int block_size)
 			min = content->target;
 		stack = stack->next;
 	}
-	return ((min + max) / 2);
+	return ((min + max - 1) / 2);
 }
 
 static void	separate(t_ab *store, int curr_stack, int size, int *mp)
@@ -62,7 +62,7 @@ static void	separate(t_ab *store, int curr_stack, int size, int *mp)
 	mp[1] = 0;
 	mp[2] = 0;
 	med = get_median(store->stack[curr_stack], size);
-	while (mp[1] < (size + !curr_stack) / 2)
+	while (mp[1] < (size + curr_stack) / 2)
 	{
 		num = ((t_data *)store->stack[curr_stack]->content)->target;
 		if (!compare(num, med, curr_stack) && ++mp[0])

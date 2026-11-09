@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svalero <svalero@student.42madrid.com      +#+  +:+       +#+        */
+/*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 08:08:22 by svalero           #+#    #+#             */
-/*   Updated: 2026/11/09 10:47:21 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/09 11:42:33 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 void	fill_array_op_name(char **name)
 {
-	name[0] = "sa\n";
-	name[1] = "sb\n";
-	name[2] = "ss\n";
-	name[3] = "ra\n";
-	name[4] = "rb\n";
-	name[5] = "rr\n";
-	name[6] = "rra\n";
-	name[7] = "rrb\n";
-	name[8] = "rrr\n";
-	name[9] = "pb\n";
-	name[10] = "pa\n";
+	name[0] = "sa";
+	name[1] = "sb";
+	name[2] = "ss";
+	name[3] = "ra";
+	name[4] = "rb";
+	name[5] = "rr";
+	name[6] = "rra";
+	name[7] = "rrb";
+	name[8] = "rrr";
+	name[9] = "pb";
+	name[10] = "pa";
 }
 
 int	main(int ac, char **av)

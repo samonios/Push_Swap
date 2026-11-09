@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   do_op.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svalero <svalero@student.42madrid.com      +#+  +:+       +#+        */
+/*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 08:53:26 by svalero           #+#    #+#             */
-/*   Updated: 2026/11/09 11:24:08 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/09 11:44:05 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,9 @@ void	do_op(t_ab *store, int op)
 	else
 		push(store, op % 3);
 	store->op_counter[op]++;
-	if (store->flags == 0 || store->flags % 32 != 0)
+	if (store->flags >= 32)
+	{
 		write(1, store->name[op], ft_strlen(store->name[op]));
+		write(1, "\n", 1);
+	}
 }

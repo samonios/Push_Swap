@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 15:29:56 by niesteba          #+#    #+#             */
-/*   Updated: 2026/11/09 10:46:19 by niesteba         ###   ########.fr       */
+/*   Updated: 2026/11/09 11:42:06 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	get_op_code(t_ab *store, char *op)
 	i = 0;
 	while (i < 11)
 	{
-		if (!ft_strncmp(op, store->name[i], 3))
+		if (!ft_strncmp(op, store->name[i], ft_strlen(store->name[i])))
 			return (i);
 		i++;
 	}
