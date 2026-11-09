@@ -6,7 +6,7 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 15:29:56 by niesteba          #+#    #+#             */
-/*   Updated: 2026/11/09 13:00:52 by niesteba         ###   ########.fr       */
+/*   Updated: 2026/11/09 13:51:35 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	get_op_code(t_ab *store, char *op)
 	i = 0;
 	while (i < 11)
 	{
-		if (!ft_strncmp(op, store->name[i], ft_strlen(store->name[i])))
+		if (!ft_strcmp(op, store->name[i]))
 			return (i);
 		i++;
 	}
@@ -30,9 +30,9 @@ void	check(t_ab *store)
 {
 	if (store->list_size[1] != 0
 		|| !is_block_ordered(store, 0, store->list_size[0]))
-		write(2, "KO", 2);
+		write(1, "KO\n", 2);
 	else
-		write(1, "OK", 2);
+		write(1, "OK\n", 2);
 }
 
 int	main(int ac, char **av)

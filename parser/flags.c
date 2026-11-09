@@ -6,23 +6,32 @@
 /*   By: niesteba <niesteba@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 19:01:32 by niesteba          #+#    #+#             */
-/*   Updated: 2026/10/28 13:26:55 by niesteba         ###   ########.fr       */
+/*   Updated: 2026/11/09 13:50:54 by niesteba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"	
 
+int	ft_strcmp(char *s1, char *s2)
+{
+	size_t	i;
+
+	while (s1[i] && s1[i] == s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
+
 static int	get_flag(char *arg)
 {
-	if (!ft_strncmp(arg, "--simple", 8))
+	if (!ft_strcmp(arg, "--simple"))
 		return (1);
-	if (!ft_strncmp(arg, "--medium", 8))
+	if (!ft_strcmp(arg, "--medium"))
 		return (2);
-	if (!ft_strncmp(arg, "--complex", 9))
+	if (!ft_strcmp(arg, "--complex"))
 		return (4);
-	if (!ft_strncmp(arg, "--adaptative", 12))
+	if (!ft_strcmp(arg, "--adaptive"))
 		return (8);
-	if (!ft_strncmp(arg, "--bench", 7))
+	if (!ft_strcmp(arg, "--bench"))
 		return (16);
 	return (0);
 }
