@@ -6,31 +6,29 @@
 /*   By: svalero <svalero@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 20:43:36 by svalero           #+#    #+#             */
-/*   Updated: 2026/11/08 17:54:17 by svalero          ###   ########.fr       */
+/*   Updated: 2026/11/09 08:24:23 by svalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "chunks.h"
 
-#define CHUNK_FACTOR 33
-
 /* Calculates the integer square root of the chunk size formula. */
 static int	get_chunk_size(int size_a)
 {
-	long long	target;
-	long long	root;
+	int	root;
 
-	target = (long long)CHUNK_FACTOR * CHUNK_FACTOR * size_a;
 	root = 0;
-	while ((root + 1) * (root + 1) <= target)
+	while ((root + 1) * (root + 1) <= size_a)
 		root++;
-	return ((int)(root / 10));
+	return (root * 3 + root / 3);
 }
 
 /* Initializes the number and capacity of the chunks. */
 static void	set_chunk_data(t_chunk *data, int size_a)
 {
 	data->csize = get_chunk_size(size_a);
+	if (data->csize > size_a / 2)
+		data->csize = size_a / 2;
 	if (data->csize < 1)
 		data->csize = 1;
 	data->nchunks = size_a / data->csize;
