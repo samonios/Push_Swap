@@ -147,4 +147,5 @@ Siguiendo las directrices del currículo de 42, las herramientas de IA (Gemini) 
   -  Main y selector de estrategia.
   -  Modo bench.
   -  Operaciones.
+
 Cabe recalcar que ambos conocemos todo sobre el flujo de principio a fin del código y las partes realizadas por el otro.
