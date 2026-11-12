@@ -133,7 +133,19 @@ En función de este ratio (entre `0.0` y `1.0`), elige la estrategia óptima:
 ### Referencias Clásicas
 * **Videos sobre quick sort** - *Para ver como hacer la lógica de pivote y separación respecto al mismo*
 * **Manual de C de GNU y Linux Programmer's Manual** (`man 3 malloc`, `man 2 write`).
-
+## División del trabajo:
+- niesteba:
+  - Algoritmo complejo (quick).
+  - Algoritmo simple (selection).
+  - Parseo y manejo de flags.
+  - Checker (bonus).
+- svalero:
+  -  Algorimto medio (chunks).
+  -  Algoritmo adaptativo.
+  -  Modo bench.
+  -  Operaciones.
+  -  Main y selector de estrategia.
+Cabe recalcar que ambos conocemos todo sobre el flujo de principio a fin del código y las partes realizadas por el otro.
 ### Uso de Inteligencia Artificial
 Siguiendo las directrices del currículo de 42, las herramientas de IA (Gemini) se han empleado exclusivamente como soporte de consulta y documentación, sin generar ni copiar la lógica central del proyecto:
 * **Estructuración de documentación:** Asistencia en la redacción, formato Markdown y organización de este archivo `README.md` a partir de la estructura del código fuente desarrollado por los autores.
