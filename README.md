@@ -138,14 +138,15 @@ Siguiendo las directrices del currículo de 42, las herramientas de IA (Gemini) 
 * **Estructuración de documentación:** Asistencia en la redacción, formato Markdown y organización de este archivo `README.md` a partir de la estructura del código fuente desarrollado por los autores.
 ## División del trabajo:
 - niesteba:
-  - Algoritmo complejo (quick).
+  - Algoritmo complex (quick).
   - Algoritmo simple (selection).
-  - Parseo y manejo de flags.
+  - Parseo con manejo de flags.
   - Checker (bonus).
 - svalero:
-  -  Algoritmo medio (chunks).
-  -  Main y selector de estrategia.
-  -  Modo bench.
-  -  Operaciones.
+  -  Main.
+  -  Gestor de operaciones con conteo, impresión y cambio pilas.
+  -  Algoritmo medium (chunks).
+  -  Algoritmo adaptive (selector de estrategia).
+  -  Modo Bench.
 
 Cabe recalcar que ambos conocemos todo sobre el flujo de principio a fin del código y las partes realizadas por el otro.
