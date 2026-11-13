@@ -150,3 +150,5 @@ Siguiendo las directrices del currículo de 42, las herramientas de IA (Gemini) 
   -  Modo Bench.
 
 Cabe recalcar que ambos conocemos todo sobre el flujo de principio a fin del código y las partes realizadas por el otro.
+
+(svalero) => Fue un placer tener a Nico como compañero de proyecto. Una gran persona con unos conocimientos muy sólidos.
